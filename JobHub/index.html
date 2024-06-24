@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHub - Your Global Recruitment Solution</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navbar  */
+        .navbar {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+        }
+
+        button.btn.btn-outline-dark {
+            margin-right: 10px;
+        }
+
+        button.btn.btn-outline-dark:hover {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        a.nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .navbar img {
+            color: #0056b3;
+            width: 160px;
+        }
+
+        .navbar-nav {
+            flex-direction: row;
+        }
+
+        .navbar-nav .nav-link {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+
+        .header {
+            background-color: #fff;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Hero Section  */
+        .hero-section {
+            background-image: url('/img/yellow\ chair\ bg.jpg');
+            background-size: 100%;
+            background-size: cover;
+            height: 700px;
+            background-position: bottom;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero-subheadline {
+            font-size: 24px;
+        }
+
+        .row.text-center {
+            margin: 50px 0px;
+        }
+
+        .row.text-center h2 {
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background-color: #0056b3;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* how it works  */
+        .how-it-works .step-card {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .icon {
+            margin-bottom: 20px;
+        }
+
+        .icon img {
+            border-radius: 50px;
+        }
+
+        .how-it-works {
+            background-color: #f7f7f7;
+            padding: 50px 0;
+        }
+
+        .how-it-works h2 {
+            color: #333;
+        }
+
+        /* Featured Candidates */
+        .featured-candidates {
+            background-color: #fff;
+            padding: 50px 0;
+        }
+
+        .featured-candidates h2 {
+            color: #333;
+        }
+
+        .featured-candidates .profile-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .profile-card img {
+            border-radius: 150px;
+        }
+
+        /* Footer  */
+        footer {
+            background-color: #f0f0f0;
+        }
+
+        .jobs {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+            flex-wrap: wrap;
+            font-size: 16px;
+            margin: 0px 10px;
+        }
+
+        .location h4 {
+            font-size: 16px;
+        }
+
+        .rights {
+            display: flex;
+            justify-content: center;
+        }
+
+        .rights p {
+            margin-bottom: 0rem;
+        }
+
+        /* Media Query */
+        @media (min-width: 360px) and (max-width: 560px) {
+
+            .navbar-nav {
+                display: contents;
+            }
+
+            .navbar img {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 360px) {
+
+            .container h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subheadline {
+                font-size: 20px;
+            }
+
+            .navbar-nav {
+                display: contents;
+            }
+
+            .navbar img {
+                width: 100%;
+            }
+        }
+
+        /* Scroll to top arrow */
+        .scroll-to-top {
+            background: url(/img/up-arrow.png);
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #007bff;
+            /* color: #fff; */
+            cursor: pointer;
+            opacity: 0.5;
+            border-radius: 25px;
+        }
+
+        .scroll-to-top:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <img src="/img/Logo jobhub.png" alt="">
+                <!-- <a class="navbar-brand" href="#">JobHub</a> -->
+                <ul class="navbar-nav ml-auto">
+                    <button type="button" class="btn btn-outline-dark">Login</button>
+                    <button type="button" class="btn btn-dark">Sign up</button>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Find Top Software Engineers, Product Managers, and Data Scientists for Your Company</h1>
+            <p class="hero-subheadline">JobHub - Connecting Companies with the Best Tech Talent Worldwide</p>
+            <a href="#" class="cta-btn">Get Started</a>
+        </div>
+    </section>
+
+    <!-- companies Logo -->
+    <div id="customers" class="customers section">
+        <div class="container text-center">
+            <div class="row text-center">
+                <h2>More than 1,000 top companies</h2>
+                <div class="logos col-xs-12 text-center">
+                    <img src="/img/company-customers.png" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Why Choose JobHub</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="step-card">
+                        <div class="icon">
+                            <img src="/img/global.png" alt="">
+                        </div>
+                        <h4>Global Reach</h4>
+                        <p>"Access top talent from diverse locations across the globe to build a truly international
+                            team."</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="step-card">
+                        <div class="icon">
+                            <img src="/img/expert.jpg" alt="">
+                        </div>
+                        <h4>Expert Matching</h4>
+                        <p>"Our advanced algorithms ensure that you connect with candidates who perfectly fit your
+                            requirements."</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="step-card">
+                        <div class="icon">
+                            <img src="/img/time.png" alt="">
+                        </div>
+                        <h4>Time Saving</h4>
+                        <p> "Save time and effort in your hiring process with our efficient and user-friendly platform."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Candidates Section -->
+    <section class="featured-candidates">
+        <div class="container">
+            <h2>Featured Candidates</h2>
+            <div class="row">
+                <!--Profile Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="profile-card">
+                        <img src="/img/man.jpg" alt="Candidate 1" width="25%">
+                        <h4>Akash Sharma</h4>
+                        <p>Software Engineer | <b>Google</b></p>
+                        <p>Akash is a highly skilled software engineer with a strong background in machine learning. At
+                            Google, he is working on developing new machine learning models for the company's search
+                            engine.</p>
+                        <a href="#">View Profile</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="profile-card">
+                        <img src="/img/girl.jpg" alt="Candidate 1" width="25%">
+                        <h4>Chloe Carson</h4>
+                        <p>QA Engineer | <b>Uber</b></p>
+                        <p>Chloe is a meticulous QA engineer with a strong understanding of testing methodologies. At
+                            Uber, she is working on developing new test automation frameworks for the company's
+                            ride-hailing platform.</p>
+                        <a href="#">View Profile</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="profile-card">
+                        <img src="/img/boy.jpg" alt="Candidate 1" width="25%">
+                        <h4>Rohan Mittal</h4>
+                        <p> DevOps Engineer | <b>OYO Rooms</b></p>
+                        <p>Rohan is a skilled DevOps engineer with a deep understanding of cloud computing technologies.
+                            At OYO Rooms, he is working on developing new DevOps tools and processes for the company's
+                            hotel management platform.</p>
+                        <a href="#">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <hr>
+        <div class="jobs">
+            <div class="location">
+                <h4><b>Jobs by Location</b></h4>
+                <li><a href="">Jobs in Banglore</a></li>
+                <li><a href="">Jobs in Delhi</a></li>
+                <li><a href="">Jobs in Pune</a></li>
+                <li><a href="">Jobs in Noida</a></li>
+            </div>
+            <div class="location">
+                <h4><b>Jobs by function</b></h4>
+                <li><a href="">Software Engineering Jobs</a></li>
+                <li><a href="">Marketing Jobs</a></li>
+                <li><a href="">Sales Jobs</a></li>
+                <li><a href="">Internship Jobs</a></li>
+            </div>
+            <div class="location">
+                <h4><b>For Employers</b></h4>
+                <li><a href="">Post Your Job</a></li>
+                <li><a href="">Sucess Stories</a></li>
+                <li><a href="">Resources</a></li>
+            </div>
+            <div class="location">
+                <h4><b>JobHub</b></h4>
+                <li><a href="">About</a></li>
+                <li><a href="">Privacy</a></li>
+                <li><a href="">Terms</a></li>
+            </div>
+            <div class="location">
+                <h4><b>Connect</b></h4>
+                <li><a href="">Help Centre</a></li>
+                <li><a href="">Contact us</a></li>
+                <img src="/img/facebook.png" alt="">
+                <img src="/img/linkedin.png" alt="">
+                <img src="/img/twitter.png" alt="">
+            </div>
+        </div>
+        <div class="rights">
+            <p>&copy; 2023 JobHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- scroll-to-top -->
+    <a href="#top" class="scroll-to-top"></a>
+
+    <script>
+        $(document).ready(function () {
+            // Scroll to top when the user clicks on the arrow
+            $(document).on("click", ".scroll-to-top", function () {
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+            });
+        });
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
